@@ -32,15 +32,16 @@ export NXF_APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 
 # Pull the containers into the cache before trying to launch the workflow.
-# Using the latest commit to dev because of issues with staging from s3 on
-# release 0.10.0. See
-# https://github.com/sanger-tol/genomeassembly/compare/0.10.0...dev
+# Using release 0.6.2 because dev has a bug with the "MAIN_MAPPING" workflow
+# not being defined.
 nextflow inspect \
     -concretize sanger-tol/ear \
     --input resources/ear_config_test.yaml \
     --outdir s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear \
     -profile singularity,pawsey \
     -r 0.6.2
+
+
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==

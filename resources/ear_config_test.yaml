@@ -29,4 +29,4 @@ btk:
   # diamond_nr_database_path: <PATH TO nr.dmnd>
   ncbi_taxonomy_path: "s3://pawsey1132:pawsey1132.atol.refdata.v0/taxdump"
   ncbi_rankedlineage_path: "s3://pawsey1132:pawsey1132.atol.refdata.v0/taxdump"
-  # config: <PATH TO ear/conf/sanger-tol-btk.config TO OVERWRITE PROCESS LIMITS>
+  config: "resources/btk_draft.yaml"
