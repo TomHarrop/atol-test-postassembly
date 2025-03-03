@@ -14,11 +14,11 @@ merquryfk:
 # Used by both subpipelines
 longread:
   type: hifi
-  dir: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads"
+  dir: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads/hifi"
 curationpretext:
   aligner: minimap2
   # telomere_motif: <TELOMERE MOTIF OF SAMPLE>
-  hic_dir: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads"
+  hic_dir: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads/hic"
 btk:
   taxid: 13085
   lineages: "tetrapoda_odb10"
