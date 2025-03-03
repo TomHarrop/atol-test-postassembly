@@ -8,7 +8,7 @@ reference_haplotigs: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sa
 mapped_bam: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129.hifiasm.20250123/scaffolding/414129_mkdup.bam"
 
 merquryfk:
-  fastk_hist: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer/414129_AusARG.hist"
+  fastk_hist: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer/414129_AusARG_fk.hist"
   fastk_ktab: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer"
 
 # Used by both subpipelines
