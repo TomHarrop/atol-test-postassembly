@@ -2,14 +2,14 @@
 assembly_id: 414129_AusARG
 reference_hap1: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129.hifiasm.20250123/scaffolding/yahs/out.break.yahs/out_scaffolds_final.fa"
 reference_hap2: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129_AusARG.hifiasm.20250123/414129_AusARG.asm.a_ctg.fa"
-reference_haplotigs: "s3://pawsey1132:pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129_AusARG.hifiasm.20250123/purging/purged.htigs.all.fa"
+reference_haplotigs: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129_AusARG.hifiasm.20250123/purging/purged.htigs.all.fa"
 
 # If a mapped bam already exists use the below + --mapped TRUE on the nextflow command else ignore it and the pipeline will create it.
-mapped_bam: "s3://pawsey1132:pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129.hifiasm.20250123/scaffolding/414129_mkdup.bam"
+mapped_bam: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129.hifiasm.20250123/scaffolding/414129_mkdup.bam"
 
 merquryfk:
-  fastk_hist: "s3://pawsey1132:pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer/414129_AusARG.hist"
-  fastk_ktab: "s3://pawsey1132:pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer"
+  fastk_hist: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer/414129_AusARG.hist"
+  fastk_ktab: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/kmer"
 
 # Used by both subpipelines
 longread:
@@ -18,15 +18,15 @@ longread:
 curationpretext:
   aligner: minimap2
   # telomere_motif: <TELOMERE MOTIF OF SAMPLE>
-  hic_dir: "s3:////pawsey1132.atol.testassembly/414129_AusARG/results/reads"
+  hic_dir: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads"
 btk:
   taxid: 13085
   lineages: "tetrapoda_odb10"
   gca_accession: GCA_0001
-  nt_database: "s3://pawsey1132:pawsey1132.atol.refdata.v0/ncbi_nucleotide_blast"
+  nt_database: "s3://pawsey1132.atol.refdata.v0/ncbi_nucleotide_blast"
   nt_database_prefix: "nt"
   # diamond_uniprot_database_path: <PATH TO reference_proteomes.dmnd FROM UNIPROT>
   # diamond_nr_database_path: <PATH TO nr.dmnd>
-  ncbi_taxonomy_path: "s3://pawsey1132:pawsey1132.atol.refdata.v0/taxdump"
-  ncbi_rankedlineage_path: "s3://pawsey1132:pawsey1132.atol.refdata.v0/taxdump"
+  ncbi_taxonomy_path: "s3://pawsey1132.atol.refdata.v0/taxdump"
+  ncbi_rankedlineage_path: "s3://pawsey1132.atol.refdata.v0/taxdump"
   config: "resources/btk_draft.yaml"

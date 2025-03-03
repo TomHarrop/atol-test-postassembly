@@ -41,8 +41,6 @@ nextflow inspect \
     -profile singularity,pawsey \
     -r 0.6.2
 
-
-
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
 # 'singularity'` that prevents using the right URL with apptainer.
