@@ -24,8 +24,8 @@ printf "TMPDIR: %s\n" "${TMPDIR}"
 printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 
 if [ -z "${SINGULARITY_CACHEDIR}" ]; then
-	export SINGULARITY_CACHEDIR=/software/projects/pawsey1132/tharrop/.singularity
-	export APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}"
+    export SINGULARITY_CACHEDIR=/software/projects/pawsey1132/tharrop/.singularity
+    export APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}"
 fi
 
 export NXF_APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
@@ -36,21 +36,21 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 # release 0.10.0. See
 # https://github.com/sanger-tol/genomeassembly/compare/0.10.0...dev
 nextflow inspect \
-	-concretize sanger-tol/ear \
-	--input resources/ear_config_test.yaml \
-	--outdir s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear \
-	-profile singularity,pawsey \
-	-r 7c83e83
+    -concretize sanger-tol/ear \
+    --input resources/ear_config_test.yaml \
+    --outdir s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear \
+    -profile singularity,pawsey \
+    -r 0.6.2
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
 # 'singularity'` that prevents using the right URL with apptainer.
 nextflow \
-	-log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
-	run \
-	sanger-tol/ear \
-	--input resources/ear_config_test.yaml \
-	--outdir s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear \
-	-resume \
-	-profile singularity,pawsey \
-	-r 7c83e83
+    -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
+    run \
+    sanger-tol/ear \
+    --input resources/ear_config_test.yaml \
+    --outdir s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear \
+    -resume \
+    -profile singularity,pawsey \
+    -r 0.6.2
