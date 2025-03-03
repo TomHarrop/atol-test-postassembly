@@ -1,7 +1,7 @@
 # General Vales for all subpiplines and modules
 assembly_id: 414129_AusARG
 reference_hap1: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129.hifiasm.20250123/scaffolding/yahs/out.break.yahs/out_scaffolds_final.fa"
-# reference_hap2: <LOCATION OF HAPLOTYPE ASSEBMLY FILE .FA>
+reference_hap2: "s3://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129_AusARG.hifiasm.20250123/414129_AusARG.asm.a_ctg.fa"
 reference_haplotigs: "s3://pawsey1132:pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129_AusARG.hifiasm.20250123/purging/purged.htigs.all.fa"
 
 # If a mapped bam already exists use the below + --mapped TRUE on the nextflow command else ignore it and the pipeline will create it.
