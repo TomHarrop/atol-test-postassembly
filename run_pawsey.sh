@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=atol_ear
-#SBATCH --time=0-02
+#SBATCH --time=0-12
 #SBATCH --cpus-per-task=2
 #SBATCH --ntasks=1
 #SBATCH --mem=8g
