@@ -25,11 +25,17 @@ rule format_config_file:
             )
         ),
     params:
-        pacbio_reads=to_storage(Path(dataset_id, "results", "reads", "hifi", "ccs_reads.fasta.gz")),
+        pacbio_reads=to_storage(
+            Path(dataset_id, "results", "reads", "hifi", "ccs_reads.fasta.gz")
+        ),
         hic_reads=to_storage(Path(dataset_id, "results", "reads", "hic", "hic.cram")),
+        dataset_id=dataset_id,
     template_engine:
         "jinja2"
 
+# todo: get the query like this:
+# registered_storage(f"{scheme}://{storage_prefix}/{path_string}")._flags["storage_object"].query
+# has to be an easier way
 
 rule config_target:
     default_target: True

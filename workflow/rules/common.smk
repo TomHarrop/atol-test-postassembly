@@ -26,6 +26,7 @@ def to_storage(path_string, storage_prefix=None, registered_storage=storage.outp
         scheme, storage_prefix = get_storage_prefix(output_prefix)
     if scheme == "s3":
         return registered_storage(f"{scheme}://{storage_prefix}/{path_string}")
+        # return registered_storage(f"{scheme}://{storage_prefix}/{path_string}")._flags["storage_object"].query
     elif scheme == "fs":
         return registered_storage(f"{storage_prefix}/{path_string}")
     else:
