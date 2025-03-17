@@ -1,6 +1,6 @@
 dataset_id: 350730_AusARG
-# output_prefix: "s3://pawsey1132.atol.testpostassembly"
-output_prefix: "fs://test/results"
+output_prefix: "s3://pawsey1132.atol.testpostassembly"
+# output_prefix: "fs://test/results"
 containers:
   bbmap:
     prefix: docker
