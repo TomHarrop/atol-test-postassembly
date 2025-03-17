@@ -15,9 +15,21 @@ data_file_dict = {
 }
 
 
+def format_params(wildcards, input):
+    param_dict = {
+        "pacbio_reads": to_storage(input.pacbio_reads).flags["storage_object"].query,
+        "hic_reads": to_storage(input.hic_reads).flags["storage_object"].query,
+    }
+    return param_dict
+
+
 rule format_config_file:
     input:
         "resources/configs/genomenote_test.csv",
+        pacbio_reads=to_storage(
+            Path(dataset_id, "results", "reads", "hifi", "ccs_reads.fasta.gz")
+        ),
+        hic_reads=to_storage(Path(dataset_id, "results", "reads", "hic", "hic.cram")),
     output:
         rendered_yaml=to_storage(
             Path(
@@ -25,17 +37,16 @@ rule format_config_file:
             )
         ),
     params:
-        pacbio_reads=to_storage(
-            Path(dataset_id, "results", "reads", "hifi", "ccs_reads.fasta.gz")
-        ),
-        hic_reads=to_storage(Path(dataset_id, "results", "reads", "hic", "hic.cram")),
+        format_params,
         dataset_id=dataset_id,
     template_engine:
         "jinja2"
 
+
 # todo: get the query like this:
 # registered_storage(f"{scheme}://{storage_prefix}/{path_string}")._flags["storage_object"].query
 # has to be an easier way
+
 
 rule config_target:
     default_target: True

@@ -7,7 +7,6 @@ import requests
 import os
 from functools import cache
 
-
 configfile: "config/config.yaml"
 
 
@@ -24,8 +23,14 @@ def get_storage_prefix(output_prefix):
 def to_storage(path_string, storage_prefix=None, registered_storage=storage.output):
     if storage_prefix is None:
         scheme, storage_prefix = get_storage_prefix(output_prefix)
+    
+    if isinstance(path_string, str):
+        # this could mean it's a param that has been coerced to a string by
+        # Snakemake
+        path_string = path_string.split(f"{storage_prefix}/", 1)[1]
+    
     if scheme == "s3":
-        return registered_storage(f"{scheme}://{storage_prefix}/{path_string}")
+        return  registered_storage(f"{scheme}://{storage_prefix}/{path_string}")
         # return registered_storage(f"{scheme}://{storage_prefix}/{path_string}")._flags["storage_object"].query
     elif scheme == "fs":
         return registered_storage(f"{storage_prefix}/{path_string}")
