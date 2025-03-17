@@ -25,7 +25,7 @@ def format_params(wildcards, input):
 
 rule format_config_file:
     input:
-        "resources/configs/genomenote_test.csv",
+        template="resources/configs/genomenote_test.csv",
         pacbio_reads=to_storage(
             Path(dataset_id, "results", "reads", "hifi", "ccs_reads.fasta.gz")
         ),
