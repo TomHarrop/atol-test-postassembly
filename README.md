@@ -24,7 +24,12 @@ and a reference genome on
 
 Assembly: GCA_041722995.2  
 biosample_wgs: SAMN41240122  
+
+https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/SRR028/28919/SRR28919959/SRR28919959.1
+
 biosample_hic: SAMN37176091 
+
+https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR25773553/SRR25773553
 
 Config: `resources/genome_note_test.yaml`
 

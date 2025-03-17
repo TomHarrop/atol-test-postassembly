@@ -25,17 +25,6 @@ if [ -z "${1}" ]; then
     exit 1
 fi
 
-export PIPELINE="${1}"
-printf "PIPELINE: %s\n" "${PIPELINE}"
-
-# get the pipeline version from pipeline_versions.yaml
-export PIPELINE_VERSION=$(grep "^${PIPELINE}:" resources/pipeline_versions.yaml | cut -d':' -f2 | tr -d ' ')
-if [ -z "${PIPELINE_VERSION}" ]; then
-    printf "Pipeline version for %s not found in pipeline_versions.yaml\n" "${PIPELINE}"
-    exit 1
-fi
-printf "PIPELINE_VERSION: %s\n" "${PIPELINE_VERSION}"
-
 printf "TMPDIR: %s\n" "${TMPDIR}"
 printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 
@@ -51,11 +40,11 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 # Using release 0.6.2 because dev has a bug with the "MAIN_MAPPING" workflow
 # not being defined.
 nextflow inspect \
-    -concretize "sanger-tol/${PIPELINE}" \
-    --input "resources/configs/${PIPELINE}_test.yaml" \
-    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/${PIPELINE}" \
+    -concretize "sanger-tol/ear" \
+    --input "resources/configs/ear_test.yaml" \
+    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear" \
     -profile singularity,pawsey \
-    -r "${PIPELINE_VERSION}"
+    -r 0.6.2
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
@@ -63,9 +52,9 @@ nextflow inspect \
 nextflow \
     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
     run \
-    "sanger-tol/${PIPELINE}" \
-    --input "resources/configs/${PIPELINE}_test.yaml" \
-    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/${PIPELINE}" \
+    "sanger-tol/ear" \
+    --input "resources/configs/ear_test.yaml" \
+    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/ear" \
     -resume \
     -profile singularity,pawsey \
-    -r "${PIPELINE_VERSION}"
+    -r 0.6.2
