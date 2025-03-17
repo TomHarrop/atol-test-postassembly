@@ -39,9 +39,10 @@ rule format_config_file:
     params:
         format_params,
         dataset_id=dataset_id,
-    template_engine:
-        "jinja2"
-
+    # template_engine:
+    #     "jinja2"
+    shell:
+        "echo {params}"
 
 # todo: get the query like this:
 # registered_storage(f"{scheme}://{storage_prefix}/{path_string}")._flags["storage_object"].query
