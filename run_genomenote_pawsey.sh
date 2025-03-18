@@ -43,7 +43,7 @@ rclone mount \
     --read-only --daemon
 
 trap \
-    'fusermount -u resources/414129_AusARG/reads; fusermount -u resources/414129_AusARG/genome}' \
+    'fusermount -u resources/414129_AusARG/reads; fusermount -u resources/414129_AusARG/genome' \
     EXIT
 
 # Pull the containers into the cache before trying to launch the workflow.
