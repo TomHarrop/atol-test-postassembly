@@ -12,6 +12,7 @@
 module load python/3.11.6
 module load nextflow/24.04.3
 module load singularity/4.1.0-nohost
+module load rclone/1.63.1
 
 unset SBATCH_EXPORT
 
