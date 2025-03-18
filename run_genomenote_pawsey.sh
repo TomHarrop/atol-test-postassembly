@@ -31,11 +31,18 @@ fi
 export NXF_APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 
+rclone mount \
+    "pawsey1132://pawsey1132.atol.testassembly/414129_AusARG/results/sanger_tol/414129.hifiasm.20250123/scaffolding/yahs/out.break.yahs" \
+    "resources/414129_AusARG" \
+    --read-only --daemon
+trap 'fusermount -u resources/414129_AusARG' EXIT
+
 # Pull the containers into the cache before trying to launch the workflow.
 # Using release 0.6.2 because dev has a bug with the "MAIN_MAPPING" workflow
 # not being defined.
 nextflow inspect \
     -concretize "sanger-tol/genomenote" \
+    --fasta "resources/414129_AusARG/out_scaffolds_final.fa" \
     --assembly "GCA_032191835.1" \
     --biosample_wgs "SAMN37280769" \
     --biosample_hic "SAMN37280769" \
@@ -51,6 +58,7 @@ nextflow \
     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
     run \
     "sanger-tol/genomenote" \
+    --fasta "resources/414129_AusARG/out_scaffolds_final.fa" \
     --assembly "GCA_032191835.1" \
     --biosample_wgs "SAMN37280769" \
     --biosample_hic "SAMN37280769" \
