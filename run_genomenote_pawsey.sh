@@ -42,7 +42,7 @@ nextflow inspect \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
     -profile singularity,pawsey \
-    -r v2.1.0
+    -r 2.1.0
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
@@ -57,4 +57,4 @@ nextflow \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
     -profile singularity,pawsey \
-    -r v2.1.0
+    -r 2.1.0
