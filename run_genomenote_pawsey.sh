@@ -41,10 +41,10 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 # not being defined.
 nextflow inspect \
     -concretize "sanger-tol/genomenote" \
-    --assembly "GCA_041722995.2" \
-    --biosample_wgs "SAMN41240122" \
-    --biosample_hic "SAMN37176091" \
-    --input "resources/configs/genomenote_test.csv" \
+    --assembly "GCA_032191835.1" \
+    --biosample_wgs "SAMN37280769" \
+    --biosample_hic "SAMN37280769" \
+    --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
     -profile singularity,pawsey \
     -r v2.1.0
@@ -56,8 +56,10 @@ nextflow \
     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
     run \
     "sanger-tol/genomenote" \
-    --input "resources/configs/genomenote_test.csv" \
+    --assembly "GCA_032191835.1" \
+    --biosample_wgs "SAMN37280769" \
+    --biosample_hic "SAMN37280769" \
+    --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
-    -resume \
     -profile singularity,pawsey \
     -r v2.1.0
