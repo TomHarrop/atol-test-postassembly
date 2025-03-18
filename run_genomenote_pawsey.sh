@@ -20,11 +20,6 @@ set -eux
 
 source /software/projects/pawsey1132/tharrop/atol-test-postassembly/venv/bin/activate
 
-if [ -z "${1}" ]; then
-    printf "Usage: run_pawsey.sh <pipeline_name>\n"
-    exit 1
-fi
-
 printf "TMPDIR: %s\n" "${TMPDIR}"
 printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 
