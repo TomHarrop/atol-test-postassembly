@@ -33,3 +33,13 @@ https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR25773553/SRR25773553
 
 Config: `resources/genome_note_test.yaml`
 
+
+Bynoe's Gecko (that we assembled)
+
+No idea if the seq material was really from this BioSample
+
+Assembly: GCA_032191835.1	
+RefSeq: GCF_032191835.1
+biosample_wgs: SAMN37280769 
+biosample_hic: SAMN37280769 
+

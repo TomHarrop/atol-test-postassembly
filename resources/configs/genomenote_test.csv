@@ -1,4 +1,3 @@
 sample,datatype,datafile
-{{ params.dataset_id }},hic,{{ params["hic_reads"] }}
-{{ params.dataset_id }},pacbio,{{ params.hic_reads }}
-{{ params }}
+{{ params.dataset_id }},hic,{{ params.hic_reads }}
+{{ params.dataset_id }},pacbio,{{ params.pacbio_reads }}
