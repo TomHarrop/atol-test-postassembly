@@ -15,12 +15,12 @@ data_file_dict = {
 }
 
 
-def format_params(wildcards, input):
-    param_dict = {
-        "pacbio_reads": to_storage(input.pacbio_reads).flags["storage_object"].query,
-        "hic_reads": to_storage(input.hic_reads).flags["storage_object"].query,
-    }
-    return param_dict
+def fix_param_prefix(storage_path_that_smk_coerced_to_string):
+    return (
+        to_storage(storage_path_that_smk_coerced_to_string)
+        .flags["storage_object"]
+        .query
+    )
 
 
 rule format_config_file:
@@ -37,12 +37,12 @@ rule format_config_file:
             )
         ),
     params:
-        format_params,
+        hic_reads=lambda wildcards, input: fix_param_prefix(input.hic_reads),
+        pacbio_reads=lambda wildcards, input: fix_param_prefix(input.pacbio_reads),
         dataset_id=dataset_id,
-    # template_engine:
-    #     "jinja2"
-    shell:
-        "echo {params}"
+    template_engine:
+        "jinja2"
+
 
 # todo: get the query like this:
 # registered_storage(f"{scheme}://{storage_prefix}/{path_string}")._flags["storage_object"].query
