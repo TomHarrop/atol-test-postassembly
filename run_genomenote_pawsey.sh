@@ -24,6 +24,14 @@ source /software/projects/pawsey1132/tharrop/atol-test-postassembly/venv/bin/act
 printf "TMPDIR: %s\n" "${TMPDIR}"
 printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 
+# reference data
+rclone mount \
+    "pawsey1132://pawsey1132.atol.refdata.v0/busco" \
+    "resources/ref/busco" \
+    --read-only --daemon
+
+trap 'fusermount -u resources/ref/busco' EXIT
+
 if [ -z "${SINGULARITY_CACHEDIR}" ]; then
     export SINGULARITY_CACHEDIR=/software/projects/pawsey1132/tharrop/.singularity
     export APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}"
@@ -50,6 +58,7 @@ nextflow inspect \
     --biosample_hic "SAMN37280769" \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
+    --lineage_db resources/ref/busco/lineages \
     -profile singularity,pawsey \
     -r 2.1.0
 
@@ -66,5 +75,6 @@ nextflow \
     --biosample_hic "SAMN37280769" \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
+    --lineage_db resources/ref/busco/lineages \
     -profile singularity,pawsey \
     -r 2.1.0
