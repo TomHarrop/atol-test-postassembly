@@ -1,3 +1,3 @@
 sample,datatype,datafile
-414129_AusARG,hic,resources/414129_AusARG/reads/hic/hic.cram
-414129_AusARG,pacbio,resources/414129_AusARG/reads/hifi/ccs_reads.fasta.gz
+414129_AusARG,hic,s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads/hic/hic.cram
+414129_AusARG,pacbio,s3://pawsey1132.atol.testassembly/414129_AusARG/results/reads/hifi/ccs_reads.fasta.gz
