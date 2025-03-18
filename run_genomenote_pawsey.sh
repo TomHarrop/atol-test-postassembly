@@ -61,7 +61,7 @@ nextflow inspect \
     --lineage_db resources/ref/busco/lineages \
     --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
     -profile singularity,pawsey \
-    -r 2.0.0
+    -r 4861e50
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
@@ -79,4 +79,4 @@ nextflow \
     --lineage_db resources/ref/busco/lineages \
         --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
     -profile singularity,pawsey \
-    -r 2.0.0
+    -r 4861e50
