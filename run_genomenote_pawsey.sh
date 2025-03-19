@@ -59,7 +59,7 @@ nextflow inspect \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
     -profile singularity,pawsey \
-    -r 1.2.5
+    -r 2.1.1
 
     # --lineage_db resources/ref/busco/lineages \
     # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
@@ -79,7 +79,7 @@ nextflow \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
     -profile singularity,pawsey \
-    -r 1.2.5
+    -r 2.1.1
 
     # --lineage_db resources/ref/busco/lineages \
         # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
