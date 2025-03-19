@@ -58,10 +58,12 @@ nextflow inspect \
     --biosample_hic "SAMN37280769" \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
-    --lineage_db resources/ref/busco/lineages \
-    --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
     -profile singularity,pawsey \
     -r 1.2.5
+
+    # --lineage_db resources/ref/busco/lineages \
+    # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
+
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
@@ -76,7 +78,8 @@ nextflow \
     --biosample_hic "SAMN37280769" \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
-    --lineage_db resources/ref/busco/lineages \
-        --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
     -profile singularity,pawsey \
     -r 1.2.5
+
+    # --lineage_db resources/ref/busco/lineages \
+        # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
