@@ -43,3 +43,8 @@ RefSeq: GCF_032191835.1
 biosample_wgs: SAMN37280769 
 biosample_hic: SAMN37280769 
 
+```csv
+sample,datatype,datafile
+414129_AusARG,hic,resources/414129_AusARG/reads/hic/hic.cram
+414129_AusARG,pacbio,resources/414129_AusARG/reads/hifi/ccs_reads.fasta.gz
+```
