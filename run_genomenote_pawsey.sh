@@ -51,16 +51,16 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 # Pull the containers into the cache before trying to launch the workflow.
 # Using release 0.6.2 because dev has a bug with the "MAIN_MAPPING" workflow
 # not being defined.
-nextflow inspect \
-    -concretize "sanger-tol/genomenote" \
-    --fasta "resources/414129_AusARG/GCA_032191835.1.fasta" \
-    --assembly "GCA_032191835.1" \
-    --biosample_wgs "SAMN37280769" \
-    --biosample_hic "SAMN37280769" \
-    --input "resources/configs/genomenote_gecko.csv" \
-    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
-    -profile singularity,pawsey \
-    -r 2.1.1
+# nextflow inspect \
+#     -concretize "sanger-tol/genomenote" \
+#     --fasta "resources/414129_AusARG/GCA_032191835.1.fasta" \
+#     --assembly "GCA_032191835.1" \
+#     --biosample_wgs "SAMN37280769" \
+#     --biosample_hic "SAMN37280769" \
+#     --input "resources/configs/genomenote_gecko.csv" \
+#     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
+#     -profile singularity,pawsey \
+#     -r 2.1.1
 
     # --lineage_db resources/ref/busco/lineages \
     # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
@@ -79,6 +79,7 @@ nextflow \
     --biosample_hic "SAMN37280769" \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
+    -resume \
     -profile singularity,pawsey \
     -r 2.1.1
 
