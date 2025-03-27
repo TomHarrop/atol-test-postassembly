@@ -77,6 +77,7 @@ nextflow \
     --assembly "GCA_032191835.1" \
     --biosample_wgs "SAMN37280769" \
     --biosample_hic "SAMN37280769" \
+    --note_template https://github.com/sanger-tol/genomenote/raw/refs/tags/2.1.1/assets/genome_note_template.docx \
     --input "resources/configs/genomenote_gecko.csv" \
     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/genomenote" \
     -resume \
