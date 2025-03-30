@@ -1,2 +1,3 @@
 sample,datatype,datafile
 414129_AusARG,pacbio,resources/414129_AusARG/reads/hifi/ccs_reads.fasta.gz
+414129_AusARG,hic,results/414129_AusARG/414129_mkdup.cram
