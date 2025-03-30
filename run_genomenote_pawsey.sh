@@ -56,7 +56,7 @@ snakemake \
     --retries 1 \
     --cores 12 \
     --notemp \
-    --local-cores "${SLURM_CPUS_ON_NODE}"
+    --local-cores "${SLURM_CPUS_ON_NODE}" \
     -s workflow/import_mapped_hic_reads.smk
 
 # Pull the containers into the cache before trying to launch the workflow.
