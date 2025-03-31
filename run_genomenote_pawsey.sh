@@ -49,15 +49,17 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 # to cram.
 # sanger_tol/414129.hifiasm.20250123/scaffolding/yahs/out.break.yahs/out_scaffolds_final.fa
 # was manually renamed to GCA_032191835.1 because the genomenote pipeline wants
-# an accession number.
+# an accession number. Because the pipeline uses the Chromosome names from ENA
+# (see README), we are now testing with the genome downloaded from ENA (not the
+# renamed assembled genome as described above).
 
-snakemake \
-    --profile profiles/pawsey_v8 \
-    --retries 1 \
-    --cores 12 \
-    --notemp \
-    --local-cores "${SLURM_CPUS_ON_NODE}" \
-    -s workflow/import_mapped_hic_reads.smk
+# snakemake \
+#     --profile profiles/pawsey_v8 \
+#     --retries 1 \
+#     --cores 12 \
+#     --notemp \
+#     --local-cores "${SLURM_CPUS_ON_NODE}" \
+#     -s workflow/import_mapped_hic_reads.smk
 
 # Pull the containers into the cache before trying to launch the workflow.
 # Using release 0.6.2 because dev has a bug with the "MAIN_MAPPING" workflow
@@ -80,6 +82,20 @@ snakemake \
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
 # 'singularity'` that prevents using the right URL with apptainer.
+
+nextflow \
+    -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
+    run \
+    "sanger-tol/readmapping" \
+    --fasta "resources/414129_AusARG/GCF_032191835.1_APGP_CSIRO_Hbin_v1_genomic.fna.gz" \
+    --input "resources/configs/readmapping_gecko.csv" \
+    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/readmapping" \
+    -resume \
+    -profile singularity,pawsey \
+    -r 1.3.4
+
+exit 0
+
 nextflow \
     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
     run \
