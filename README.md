@@ -63,3 +63,19 @@ sample,datatype,datafile
   - The genomeassembly pipeline outputs these as bam but genomenote expects
   cram, and the first thing it does is convert it back to bam. Makes me think
   these aren't the reads it's looking for. But what then?
+
+The mapped reads need to be mapped inside the pipeline because of chromosome names
+
+
+`414129_AusARG_T2_sorted.pairs`:
+
+```
+A00548:503:HKWJJDMXY:1:1101:10104:36589	0	ptg000002l01	22000966	8	0	ptg000002l01	21992299	16	60	60
+```
+
+`GCA_032191835.1_chrom.list`:
+
+```
+CM063325.1	285831653
+CM063326.1	205803199
+```
