@@ -56,6 +56,8 @@ sample,datatype,datafile
 
 ### Notes
 
+- The pipeline pulls chromosome names from the registered asssembly. So this
+  will ONLY work after the assembly has been posted on INSDC.
 - What reads does the pipeline expect in the HiC cram file?
   - In the first attempt I used unmapped reads but many of the
     scaffolding-related variables were empty. I think it expects HiC reads
