@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=atol_ear
+#SBATCH --job-name=atol_genomenote
 #SBATCH --partition=long
 #SBATCH --time=4-00
 #SBATCH --cpus-per-task=2
