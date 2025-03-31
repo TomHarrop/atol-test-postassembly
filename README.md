@@ -53,3 +53,13 @@ sample,datatype,datafile
 414129_AusARG,hic,resources/414129_AusARG/reads/hic/hic.cram
 414129_AusARG,pacbio,resources/414129_AusARG/reads/hifi/ccs_reads.fasta.gz
 ```
+
+### Notes
+
+- What reads does the pipeline expect in the HiC cram file?
+  - In the first attempt I used unmapped reads but many of the
+    scaffolding-related variables were empty. I think it expects HiC reads
+    mapped to the genome assembly.
+  - The genomeassembly pipeline outputs these as bam but genomenote expects
+  cram, and the first thing it does is convert it back to bam. Makes me think
+  these aren't the reads it's looking for. But what then?

@@ -19,6 +19,7 @@ rule samtools_view:
     output:
         cram=Path("results", "414129_AusARG", "414129_mkdup.cram"),
         index=Path("results", "414129_AusARG", "414129_mkdup.cram.crai"),
+        flagstat=Path("results", "414129_AusARG", "414129_mkdup.flagstat"),
     log:
         Path("logs", "samtools_view.log"),
     resources:
@@ -38,4 +39,9 @@ rule samtools_view:
         "&& "
         "samtools index "
         "{output.cram} "
+        "2>> {log} "
+        "&& "
+        "samtools flagstat "
+        "{output.cram} "
+        "> {output.flagstat} "
         "2>> {log} "
