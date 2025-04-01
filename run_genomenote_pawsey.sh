@@ -94,14 +94,14 @@ nextflow \
     -profile singularity,pawsey \
     -r 1.3.4
 
-exit 0
+# for now just copying the results of readmapping into resources
 
 nextflow \
     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
     run \
     "sanger-tol/genomenote" \
-    --fasta "resources/414129_AusARG/GCA_032191835.1.fasta" \
-    --assembly "GCA_032191835.1" \
+    --fasta "resources/414129_AusARG/GCF_032191835.1_APGP_CSIRO_Hbin_v1_genomic.fna.gz" \
+    --assembly "GCF_032191835.1" \
     --biosample_wgs "SAMN37280769" \
     --biosample_hic "SAMN37280769" \
     --note_template https://github.com/sanger-tol/genomenote/raw/refs/tags/2.1.1/assets/genome_note_template.docx \
