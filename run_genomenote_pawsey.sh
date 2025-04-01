@@ -75,9 +75,8 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 #     -profile singularity,pawsey \
 #     -r 2.1.1
 
-    # --lineage_db resources/ref/busco/lineages \
-    # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
-
+# --lineage_db resources/ref/busco/lineages \
+# --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
@@ -100,7 +99,7 @@ nextflow \
     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
     run \
     "sanger-tol/genomenote" \
-    --fasta "resources/414129_AusARG/GCF_032191835.1_APGP_CSIRO_Hbin_v1_genomic.fna.gz" \
+    --fasta "resources/414129_AusARG/GCA_032191835.1.fasta.gz" \
     --assembly "GCA_032191835.1" \
     --biosample_wgs "SAMN37280769" \
     --biosample_hic "SAMN37280769" \
@@ -111,5 +110,5 @@ nextflow \
     -profile singularity,pawsey \
     -r 2.1.1
 
-    # --lineage_db resources/ref/busco/lineages \
-        # --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
+# --lineage_db resources/ref/busco/lineages \
+# --lineage_tax_ids resources/ref/mapping_taxids-busco_dataset_name.eukaryota_odb10.2019-12-16.txt \
