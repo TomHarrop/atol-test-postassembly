@@ -67,7 +67,8 @@ sample,datatype,datafile
   these aren't the reads it's looking for. But what then?
 - The mapped reads need to be mapped to the GenBank assembly with
   sanger-tol/readmapping.
-- **Use the GenBank, NOT RefSeq assembly**. [Genome assembly APGP_CSIRO_Hbin_v1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_032191835.1/)
+- **Use the GenBank, NOT RefSeq assembly**. [Genome assembly
+  APGP_CSIRO_Hbin_v1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_032191835.1/)
   - The RefSeq assembly is `GCF_032191835.1`
   - The GenBank assembly is `GCA_032191835.1`
   - GenomeNote doesn't seem to accept the RefSeq accession, and it has
