@@ -65,8 +65,15 @@ sample,datatype,datafile
   - The genomeassembly pipeline outputs these as bam but genomenote expects
   cram, and the first thing it does is convert it back to bam. Makes me think
   these aren't the reads it's looking for. But what then?
-
-The mapped reads need to be mapped inside the pipeline because of chromosome names
+- The mapped reads need to be mapped to the GenBank assembly with
+  sanger-tol/readmapping.
+- **Use the GenBank, NOT RefSeq assembly**. [Genome assembly APGP_CSIRO_Hbin_v1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_032191835.1/)
+  - The RefSeq assembly is `GCF_032191835.1`
+  - The GenBank assembly is `GCA_032191835.1`
+  - GenomeNote doesn't seem to accept the RefSeq accession, and it has
+    different chromosome names to the GenBank assembly. So to get everything to
+    work, you have to run readmapping with the GenBank assembly, and then
+    GenomeNote with the GenBank assembly.
 
 
 `414129_AusARG_T2_sorted.pairs`:
