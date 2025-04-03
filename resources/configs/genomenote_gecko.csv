@@ -1,3 +1,3 @@
 sample,datatype,datafile
 414129_AusARG,pacbio,resources/414129_AusARG/reads/hifi/ccs_reads.fasta.gz
-414129_AusARG,hic,resources/414129_AusARG/readmapping/GCF_032191835.1_APGP_CSIRO_Hbin_v1_genomic.unmasked.hic.414129_AusARG.cram
+414129_AusARG,hic,resources/414129_AusARG/readmapping/GCA_032191835.1.unmasked.hic.414129_AusARG.cram

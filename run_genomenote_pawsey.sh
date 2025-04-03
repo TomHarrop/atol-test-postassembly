@@ -82,18 +82,17 @@ export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
 # 'singularity'` that prevents using the right URL with apptainer.
 
-nextflow \
-    -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
-    run \
-    "sanger-tol/readmapping" \
-    --fasta "resources/414129_AusARG/GCA_032191835.1.fna.gz" \
-    --input "resources/configs/readmapping_gecko.csv" \
-    --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/readmapping" \
-    -resume \
-    -profile singularity,pawsey \
-    -r 1.3.4
+# nextflow \
+#     -log "nextflow_logs/nextflow.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
+#     run \
+#     "sanger-tol/readmapping" \
+#     --fasta "resources/414129_AusARG/GCA_032191835.1.fna.gz" \
+#     --input "resources/configs/readmapping_gecko.csv" \
+#     --outdir "s3://pawsey1132.atol.testpostassembly/414129_AusARG/results/readmapping" \
+#     -resume \
+#     -profile singularity,pawsey \
+#     -r 1.3.4
 
-exit 0
 
 # for now just copying the results of readmapping into resources
 
