@@ -75,6 +75,9 @@ sample,datatype,datafile
     different chromosome names to the GenBank assembly. So to get everything to
     work, you have to run readmapping with the GenBank assembly, and then
     GenomeNote with the GenBank assembly.
+- Follow up: what happens if the GenBank assembly has scaffolds, not
+  chromsomes? Try this one to find out:
+  https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_025563575.1/
 
 
 `414129_AusARG_T2_sorted.pairs`:
