@@ -66,15 +66,6 @@ export NXF_WORK="${NXF_CACHE_DIR}/work"
 printf "NXF_HOME: %s\n" "${NXF_HOME}"
 printf "NXF_WORK: %s\n" "${NXF_WORK}"
 
-# Download the reads from BPA
-snakemake \
-	--profile profiles/pawsey_v8 \
-	--retries 0 \
-	--keep-going \
-	--cores 12 \
-	--local-cores "${SLURM_CPUS_ON_NODE}" \
-	config_target
-
 # Pull the containers into the cache before trying to launch the workflow.
 # Using the latest commit to dev because of issues with staging from s3 on
 # release 0.10.0. See
