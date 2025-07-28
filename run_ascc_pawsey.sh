@@ -54,6 +54,9 @@ fi
 export NXF_APPTAINER_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 export NXF_SINGULARITY_CACHEDIR="${SINGULARITY_CACHEDIR}/library"
 
+singularity cache clean -f
+exit 0
+
 # load the manual nextflow install
 export PATH="${PATH}:/software/projects/pawsey1132/tharrop/${SOURCE_DIRNAME}/bin"
 printf "nextflow: %s\n" "$( readlink -f $( which nextflow ) )"
