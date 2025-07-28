@@ -1,5 +1,3 @@
-input: "resources/configs/ascc-EmblemaPictum247745.csv"
-outdir: "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
 reads_path:
   - "s3:/pawsey1132.atol.testassembly/Emblema_pictum_247745/results/reads/hifi/ccs_reads.fasta.gz"
 reads_type: "hifi"
