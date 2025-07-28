@@ -1,0 +1,12 @@
+input: "resources/configs/ascc-EmblemaPictum247745.csv"
+outdir: "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
+reads_path:
+  - "s3:/pawsey1132.atol.testassembly/Emblema_pictum_247745/results/reads/hifi/ccs_reads.fasta.gz"
+reads_type: "hifi"
+reads_layout: "SINGLE"
+pacbio_barcode_names: "bc2001,bc2009"
+busco_lineages: "aves_odb10"
+sample_id: "EmblemaPictum247745"
+scientific_name: "Emblema pictum"
+taxid: 247745
+dimensionality_reduction_methods: ["pca", "random_trees"]
