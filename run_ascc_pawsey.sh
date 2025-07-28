@@ -35,9 +35,9 @@ RESULT_DIRNAME="EmblemaPictum247745"
 PIPELINE_PARAMS=(
 	"--input" "resources/configs/ascc-EmblemaPictum247745.csv"
 	"--outdir" "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
-	"--params-input" "resources/configs/ascc-EmblemaPictum247745.yml"
 	"--genomic_only"
 	"--run_essentials" "genomic"
+	"-params-file" "resources/configs/ascc-EmblemaPictum247745.yml"
 	"-profile" "singularity,pawsey"
 	"-r" "${PIPELINE_VERSION}"
 )
