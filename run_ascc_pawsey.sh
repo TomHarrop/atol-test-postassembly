@@ -30,11 +30,14 @@ PIPELINE="sanger-tol/ascc"
 PIPELINE_VERSION="0.3.0"
 SOURCE_DIRNAME="atol-test-postassembly-ascc-emblema_pictum"
 RESULT_DIRNAME="EmblemaPictum247745"
-# RESULT_VERSION="v1"
+
+# ascc not compatible with S3 output?
+# 	"--outdir" "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
+# Jul-30 14:20:17.180 [main] DEBUG n.v.FormatDirectoryPathEvaluator - Cloud blob storage paths are not supported by 'FormatDirectoryPathEvaluator': 's3://pawsey1132.atol.testpostassembly/EmblemaPictum247745/results/ascc'
 
 PIPELINE_PARAMS=(
 	"--input" "resources/configs/ascc-EmblemaPictum247745.csv"
-	"--outdir" "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
+	"--outdir" "results/${RESULT_DIRNAME}/results/ascc"
 	"--genomic_only"
 	"--run_essentials" "genomic"
 	"-params-file" "resources/configs/ascc-EmblemaPictum247745.yml"
@@ -72,11 +75,11 @@ printf "NXF_WORK: %s\n" "${NXF_WORK}"
 # https://github.com/sanger-tol/genomeassembly/compare/0.10.0...dev. Also,
 # Pawsey only has NF 24.04.3 so we can't use nf-schema@2.4.2. Commit 68331e7
 # seems to be the last commit before this was added.
-nextflow \
-	-log "nextflow_logs/nextflow_inspect.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
-	inspect \
-	-concretize "${PIPELINE}" \
-	"${PIPELINE_PARAMS[@]}"
+# nextflow \
+# 	-log "nextflow_logs/nextflow_inspect.$(date +"%Y%m%d%H%M%S").${RANDOM}.log" \
+# 	inspect \
+# 	-concretize "${PIPELINE}" \
+# 	"${PIPELINE_PARAMS[@]}"
 
 # Note, it's tempting to use the apptainer profile, but the nf-core (and some
 # sanger-tol) pipelines have a conditional `workflow.containerEngine ==
