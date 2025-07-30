@@ -10,3 +10,6 @@ taxid: 247745
 dimensionality_reduction_methods: ["pca", "random_trees"]
 nt_database_path: "s3://pawsey1132.atol.refdata.v1/ncbi_nucleotide_blast"
 nt_database_prefix: nt
+ncbi_taxonomy_path: "s3://pawsey1132.atol.refdata.v0/taxdump"
+ncbi_ranked_lineage_path: "s3://pawsey1132.atol.refdata.v0/taxdump/rankedlineage.dmp"
+busco_lineages_folder: "s3://pawsey1132.atol.refdata.v0/busco/lineages"
