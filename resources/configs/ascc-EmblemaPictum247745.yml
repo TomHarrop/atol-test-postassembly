@@ -8,3 +8,5 @@ sample_id: "EmblemaPictum247745"
 scientific_name: "Emblema pictum"
 taxid: 247745
 dimensionality_reduction_methods: ["pca", "random_trees"]
+nt_database_path: "s3://pawsey1132.atol.refdata.v1/ncbi_nucleotide_blast"
+nt_database_prefix: nt
