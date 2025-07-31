@@ -1,5 +1,5 @@
 reads_path:
-  - "s3:/pawsey1132.atol.testassembly/Emblema_pictum_247745/results/reads/hifi/ccs_reads.fasta.gz"
+  - "s3://pawsey1132.atol.testassembly/Emblema_pictum_247745/results/reads/hifi/ccs_reads.fasta.gz"
 reads_type: "hifi"
 reads_layout: "SINGLE"
 pacbio_barcode_names: "bc2001,bc2009"
