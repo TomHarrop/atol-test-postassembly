@@ -13,3 +13,4 @@ nt_database_prefix: nt
 ncbi_taxonomy_path: "s3://pawsey1132.atol.refdata.v0/taxdump"
 ncbi_ranked_lineage_path: "s3://pawsey1132.atol.refdata.v0/taxdump/rankedlineage.dmp"
 busco_lineages_folder: "s3://pawsey1132.atol.refdata.v0/busco/lineages"
+nt_kraken_database_path: "s3://pawsey1132.atol.refdata.v0/kraken2_nt"
