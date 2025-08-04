@@ -8,12 +8,16 @@ sample_id: "EmblemaPictum247745"
 scientific_name: "Emblema pictum"
 taxid: 247745
 dimensionality_reduction_methods: ["pca", "random_trees"]
-busco_lineages_folder: "s3://pawsey1132.atol.refdata.busco/busco/lineages"
-diamond_nr_database_path: "s3://pawsey1132.atol.refdata.v0/FIXME.dmnd"
-diamond_uniprot_database_path: "s3://pawsey1132.atol.refdata.uniprot.diamond/diamond/reference_proteomes.dmnd"
+# ok
+busco_lineages_folder: "s3://pawsey1132.atol.refdata.v0/busco/lineages"
+vecscreen_database_path: "s3://pawsey1132.atol.refdata.vecscreen/vecscreen/"
 ncbi_ranked_lineage_path: "s3://pawsey1132.atol.refdata.v1/taxdump/rankedlineage.dmp"
 ncbi_taxonomy_path: "s3://pawsey1132.atol.refdata.v1/taxdump"
+diamond_uniprot_database_path: "s3://pawsey1132.atol.refdata.uniprot.diamond/diamond/reference_proteomes.dmnd"
 nt_database_path: "s3://pawsey1132.atol.refdata.v1/ncbi_nucleotide_blast"
 nt_database_prefix: nt
-nt_kraken_database_path: "s3://pawsey1132.atol.refdata.kraken/kraken2_nt"
-vecscreen_database_path: "s3://pawsey1132.atol.refdata.vecscreen/vecscreen/"
+
+#todo
+nt_kraken_database_path: "s3://pawsey1132.atol.refdata.kraken/k2_core_nt"
+diamond_nr_database_path: "s3://pawsey1132.atol.refdata.nr.diamond/FIXME.dmnd"
+
