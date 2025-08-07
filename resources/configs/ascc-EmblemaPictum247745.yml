@@ -3,7 +3,7 @@ reads_path:
 reads_type: "hifi"
 reads_layout: "SINGLE"
 pacbio_barcode_names: "bc2001,bc2009"
-busco_lineages: "aves_odb10"
+busco_lineages: "passeriformes_odb10"
 sample_id: "EmblemaPictum247745"
 scientific_name: "Emblema pictum"
 taxid: 247745
