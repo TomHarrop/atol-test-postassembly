@@ -17,5 +17,5 @@ nt_database_path: "s3://pawsey1132.atol.refdata.v1/ncbi_nucleotide_blast"
 nt_database_prefix: nt
 nt_kraken_database_path: "s3://pawsey1132.atol.refdata.kraken/k2_core_nt"
 vecscreen_database_path: "s3://pawsey1132.atol.refdata.vecscreen/vecscreen/"
-#todo
-diamond_nr_database_path: "s3://pawsey1132.atol.refdata.nr.diamond/FIXME.dmnd"
+# fixme - this should be NR
+diamond_nr_database_path: "s3://pawsey1132.atol.refdata.uniprot.diamond/diamond/reference_proteomes.dmnd"
