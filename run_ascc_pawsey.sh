@@ -27,7 +27,7 @@ printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 
 # parameters
 PIPELINE="sanger-tol/ascc"
-PIPELINE_VERSION="9664b07"
+PIPELINE_VERSION="4e65d73"
 SOURCE_DIRNAME="atol-test-postassembly-ascc-emblema_pictum"
 RESULT_DIRNAME="EmblemaPictum247745"
 
