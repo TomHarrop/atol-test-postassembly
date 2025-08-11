@@ -3,12 +3,13 @@ reads_path:
 reads_type: "hifi"
 reads_layout: "SINGLE"
 pacbio_barcode_names: "bc2001,bc2009"
+# from https://raw.githubusercontent.com/sanger-tol/ascc/refs/heads/main/assets/ascc_database_fasta/pacbio_adaptors.fa
+pacbio_barcode_file: "resources/pacbio_adaptors.fa"
 busco_lineages: "passeriformes_odb10"
 sample_id: "EmblemaPictum247745"
 scientific_name: "Emblema pictum"
 taxid: 247745
 dimensionality_reduction_methods: ["pca", "random_trees"]
-# ok
 busco_lineages_folder: "s3://pawsey1132.atol.refdata.busco/busco/lineages"
 diamond_uniprot_database_path: "s3://pawsey1132.atol.refdata.uniprot.diamond/diamond/reference_proteomes.dmnd"
 ncbi_ranked_lineage_path: "s3://pawsey1132.atol.refdata.v1/taxdump/rankedlineage.dmp"
