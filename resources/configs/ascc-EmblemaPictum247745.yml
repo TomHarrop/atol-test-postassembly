@@ -20,4 +20,4 @@ nt_kraken_database_path: "s3://pawsey1132.atol.refdata.kraken/k2_core_nt"
 vecscreen_database_path: "s3://pawsey1132.atol.refdata.vecscreen/vecscreen/"
 diamond_nr_database_path: "s3://pawsey1132.atol.refdata.nr.diamond/diamond/nr.dmnd"
 # troubleshooting attempts:
-run_fcsgx: "off"
+fcs_gx_database_path: "s3://pawsey1132.atol.refdata.fcsgx/fcsgx/"
