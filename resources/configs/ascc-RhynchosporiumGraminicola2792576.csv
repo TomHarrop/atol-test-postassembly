@@ -1,3 +1,2 @@
 sample,assembly_type,assembly_file
-RhynchosporiumGraminicola2792576,PRIMARY,resources/reads/hap1_scaffolds_final.fa
-RhynchosporiumGraminicola2792576,HAPLO,resources/reads/hap2_scaffolds_final.fa
+RhynchosporiumGraminicola2792576,PRIMARY,"s3://pawsey1132.atol.testassembly/RhynchosporiumGraminicola2792576/results/sanger_tol/RhynchosporiumGraminicola2792576.hifiasm.v0/purging/purged.fa"
