@@ -28,19 +28,19 @@ printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 # parameters
 PIPELINE="sanger-tol/ascc"
 PIPELINE_VERSION="4e65d73"
-SOURCE_DIRNAME="atol-test-postassembly-ascc-emblema_pictum"
-RESULT_DIRNAME="EmblemaPictum247745"
+SOURCE_DIRNAME="atol-test-postassembly-ascc-r-graminicola"
+RESULT_DIRNAME="RhynchosporiumGraminicola2792576"
 
 # ascc not compatible with S3 output?
 # 	"--outdir" "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
 # Jul-30 14:20:17.180 [main] DEBUG n.v.FormatDirectoryPathEvaluator - Cloud blob storage paths are not supported by 'FormatDirectoryPathEvaluator': 's3://pawsey1132.atol.testpostassembly/EmblemaPictum247745/results/ascc'
 
 PIPELINE_PARAMS=(
-	"--input" "resources/configs/ascc-EmblemaPictum247745.csv"
-	"--outdir" "results/${RESULT_DIRNAME}/results/ascc"
+	"--input" "resources/configs/ascc-${RESULT_DIRNAME}.csv"
+	"--outdir" "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
 	"--genomic_only"
 	"--run_essentials" "genomic"
-	"-params-file" "resources/configs/ascc-EmblemaPictum247745.yml"
+	"-params-file" "resources/configs/ascc-${RESULT_DIRNAME}.yml"
 	"-profile" "singularity,pawsey"
 	"-r" "${PIPELINE_VERSION}"
 )

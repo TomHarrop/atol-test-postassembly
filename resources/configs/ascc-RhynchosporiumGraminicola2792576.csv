@@ -1,0 +1,3 @@
+sample,assembly_type,assembly_file
+RhynchosporiumGraminicola2792576,PRIMARY,resources/reads/hap1_scaffolds_final.fa
+RhynchosporiumGraminicola2792576,HAPLO,resources/reads/hap2_scaffolds_final.fa
