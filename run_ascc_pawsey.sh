@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=ascc_epict
+#SBATCH --job-name=ascc_rgram
 #SBATCH --time=3-00
 #SBATCH --partition=long
 #SBATCH --cpus-per-task=2
