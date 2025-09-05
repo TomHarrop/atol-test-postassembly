@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=ascc_epict
-#SBATCH --time=3-00
+#SBATCH --time=4-00
 #SBATCH --partition=long
 #SBATCH --cpus-per-task=2
 #SBATCH --ntasks=1
