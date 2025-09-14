@@ -1,3 +1,3 @@
 sample,assembly_type,assembly_file
-EmblemaPictum247745,PRIMARY,resources/reads/hap1_scaffolds_final.fa
-EmblemaPictum247745,HAPLO,resources/reads/hap2_scaffolds_final.fa
+EmblemaPictum247745,PRIMARY,s3://pawsey1132.atol.testassembly/Emblema_pictum_247745/results/sanger_tol/Emblema.hifiasm-hic.v1/scaffolding_hap1/yahs/out.break.yahs/hap1_scaffolds_final.fa
+EmblemaPictum247745,HAPLO,s3://pawsey1132.atol.testassembly/Emblema_pictum_247745/results/sanger_tol/Emblema.hifiasm-hic.v1/scaffolding_hap2/yahs/out.break.yahs/hap2_scaffolds_final.fa
