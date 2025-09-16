@@ -6,7 +6,9 @@ sample_id: "RhynchosporiumGraminicola2792576"
 scientific_name: "Rhynchosporium graminicola"
 busco_lineages: "helotiales_odb10"
 taxid: 2792576
-# pacbio_barcode_names: "bc2001,bc2009"
+# pacbio_barcode_names: "bc2001,bc2009".
+# The following is an attempt to implement the sanger-tol "production" config
+# from https://github.com/sanger-tol/ascc/blob/main/conf/production.config
 busco_lineages_folder: "s3://pawsey1132.atol.refdata.busco/busco/lineages"
 diamond_nr_database_path: "s3://pawsey1132.atol.refdata.nr.diamond/diamond/nr.dmnd"
 diamond_uniprot_database_path: "s3://pawsey1132.atol.refdata.uniprot.diamond/diamond/reference_proteomes.dmnd"
