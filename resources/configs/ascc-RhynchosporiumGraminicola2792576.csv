@@ -1,2 +1,2 @@
 sample,assembly_type,assembly_file
-RhynchosporiumGraminicola2792576,PRIMARY,"s3://pawsey1132.atol.testassembly/RhynchosporiumGraminicola2792576/results/sanger_tol/RhynchosporiumGraminicola2792576.hifiasm.v0/purging/purged.fa"
+RhynchosporiumGraminicola2792576v2,PRIMARY,"s3://pawsey1132.atol.testassembly/RhynchosporiumGraminicola2792576/results/sanger_tol/RhynchosporiumGraminicola2792576.hifiasm.v0/purging/purged.fa"
