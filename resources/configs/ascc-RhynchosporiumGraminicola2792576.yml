@@ -2,22 +2,42 @@ reads_path:
   - "s3://pawsey1132.atol.testassembly/RhynchosporiumGraminicola2792576/results/reads/hifi/ccs_reads.fasta.gz"
 reads_type: "hifi"
 reads_layout: "SINGLE"
-pacbio_barcode_names: "bc2001,bc2009"
-# from https://raw.githubusercontent.com/sanger-tol/ascc/refs/heads/main/assets/ascc_database_fasta/pacbio_adaptors.fa
-pacbio_barcode_file: "resources/pacbio_adaptors.fa"
-busco_lineages: "helotiales_odb10"
 sample_id: "RhynchosporiumGraminicola2792576"
 scientific_name: "Rhynchosporium graminicola"
+busco_lineages: "helotiales_odb10"
 taxid: 2792576
-dimensionality_reduction_methods: ["pca", "random_trees"]
+# pacbio_barcode_names: "bc2001,bc2009"
 busco_lineages_folder: "s3://pawsey1132.atol.refdata.busco/busco/lineages"
+diamond_nr_database_path: "s3://pawsey1132.atol.refdata.nr.diamond/diamond/nr.dmnd"
 diamond_uniprot_database_path: "s3://pawsey1132.atol.refdata.uniprot.diamond/diamond/reference_proteomes.dmnd"
+fcs_gx_database_path: "s3://pawsey1132.atol.refdata.fcsgx/fcsgx/"
+genomic_only: true
+kmer_length: 7
+n_neighbours: 13
 ncbi_ranked_lineage_path: "s3://pawsey1132.atol.refdata.v1/taxdump/rankedlineage.dmp"
 ncbi_taxonomy_path: "s3://pawsey1132.atol.refdata.v1/taxdump"
 nt_database_path: "s3://pawsey1132.atol.refdata.v1/ncbi_nucleotide_blast"
-nt_database_prefix: nt
+nt_database_prefix: "nt"
 nt_kraken_database_path: "s3://pawsey1132.atol.refdata.kraken/k2_core_nt"
+# from https://raw.githubusercontent.com/sanger-tol/ascc/refs/heads/main/assets/ascc_database_fasta/pacbio_adaptors.fa
+pacbio_barcode_file: "resources/pacbio_adaptors.fa"
+run_autofilter_assembly: "off"
+run_btk_busco: "off"
+run_coverage: "genomic"
+run_create_btk_dataset: "genomic"
+run_essentials: "genomic"
+run_fcs_adaptor: "off"
+run_fcsgx: "genomic"
+run_kmers: "genomic"
+run_kraken: "off"
+run_merge_datasets: "off"
+run_nr_diamond: "off"
+run_nt_blast: "off"
+run_organellar_blast: "off"
+run_pacbio_barcodes: "off"
+run_tiara: "genomic"
+run_uniprot_diamond: "off"
+run_vecscreen: "off"
+seqkit_sliding: 100000
+seqkit_window: 6000
 vecscreen_database_path: "s3://pawsey1132.atol.refdata.vecscreen/vecscreen/"
-diamond_nr_database_path: "s3://pawsey1132.atol.refdata.nr.diamond/diamond/nr.dmnd"
-# troubleshooting attempts:
-fcs_gx_database_path: "s3://pawsey1132.atol.refdata.fcsgx/fcsgx/"

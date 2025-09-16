@@ -29,7 +29,7 @@ printf "SLURM_CPUS_ON_NODE: %s\n" "${SLURM_CPUS_ON_NODE}"
 PIPELINE="sanger-tol/ascc"
 PIPELINE_VERSION="4e65d73"
 SOURCE_DIRNAME="atol-test-postassembly-ascc-r-graminicola"
-RESULT_DIRNAME="RhynchosporiumGraminicola2792576"
+RESULT_DIRNAME="RhynchosporiumGraminicola2792576v2"
 
 # ascc not compatible with S3 output?
 # 	"--outdir" "s3://pawsey1132.atol.testpostassembly/${RESULT_DIRNAME}/results/ascc"
